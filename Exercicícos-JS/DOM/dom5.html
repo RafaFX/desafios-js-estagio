@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM/Event 5</title>
+    <link rel="stylesheet" href="../css/execs.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="../img/logo.png" class="logo"></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="https://github.com/RafaFX">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="box">
+
+        <input id="checkbox" disabled>
+        <label for="checkbox">checkbox</label>
+        <button type="button" id="button">Check</button>
+
+    </div>
+
+    <script>
+
+        const checkbox = document.getElementById('checkbox');
+        const btn = document.getElementById('button');
+
+        function check (){;
+            checkbox.value = "Checkado";
+        }
+
+        btn.onclick = check;
+
+    </script>
+
+    <footer>
+        <p class="copyright">&copy; Copyright Rafael Lima - 2023</p>
+    </footer>
+
+
+
+
+</body>
+
+</html>

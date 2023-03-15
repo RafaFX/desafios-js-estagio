@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exec 8</title>
+    <link rel="stylesheet" href="../css/execs.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="../img/logo.png" class="logo"></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="https://github.com/RafaFX">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="box">
+
+        <h1>Digite a palavra para saber se é um palíndromo</h1>
+
+        <br>
+        <br>
+
+        <input type="text" class="textField">
+
+        <button>Verificar</button>
+
+        <br>
+        <br>
+
+        <h2 class="result"></h2>
+
+        <br>
+
+
+    </div>
+
+    <script>
+
+        const btn = document.querySelector('button');
+
+        const textField = document.querySelector('.textField');
+
+        const result = document.querySelector('.result')
+
+        function getText() {
+            result.textContent = `${checkPalindromePairUnpair(textField.value)}`;
+        }
+
+        function checkPalindromePairUnpair(text) {
+
+            const textLower = text.toLowerCase();
+
+            const textLenght = textLower.length;
+
+            if (textLenght % 2 === 0) {
+                const result = checkPalindrome(textLenght, textLower, 0)
+                return result
+            }
+            else {
+                const result = checkPalindrome(textLenght, textLower, 1)
+                return result
+            }
+
+        }
+
+
+        function checkPalindrome(textNumberLenght, text, number) {
+
+            const textDivided = Math.floor(textNumberLenght / 2);
+
+            const textFirstHalf = text.slice(0, textDivided);
+
+            const textSecondHalf = text.slice(textDivided + number, textNumberLenght);
+
+            const textFirstHalfArray = textFirstHalf.split('');
+
+            const supportArray = [].concat(textFirstHalfArray);
+
+            let supportVariable = 0;
+
+            for (i = 0; i < textFirstHalfArray.length; i++) {
+                supportVariable = supportArray[i];
+                supportArray[i] = supportArray[i + 1];
+                supportArray[i + 1] = supportVariable;
+            }
+
+            const joinFirstHalfArray = supportArray.join('');
+            if (joinFirstHalfArray === textSecondHalf) {
+                const resultPositive = `${textField.value} é um palíndromo`;
+                result.style.backgroundColor = 'green';
+                return resultPositive;
+            } else {
+                const resultNegative = `${textField.value} não é um palíndromo`;
+                result.style.backgroundColor = 'red';
+                return resultNegative;
+            }
+        }
+
+        btn.onclick = getText;
+
+    </script>
+
+    <footer>
+        <p class="copyright">&copy; Copyright Rafael Lima - 2023</p>
+    </footer>
+
+
+
+
+</body>
+
+</html>

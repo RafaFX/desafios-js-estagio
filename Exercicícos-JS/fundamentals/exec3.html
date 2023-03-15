@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exec 3</title>
+    <link rel="stylesheet" href="../css/execs.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+</head>
+
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="../img/logo.png" class="logo" /></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="https://github.com/RafaFX">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="box">
+        <h1>Array que soma os números positivos</h1>
+
+        <br />
+        <br />
+
+        <h2>Array</h2>
+
+        <br />
+
+        <p class="disorderedArray"></p>
+
+        <button class="arrayButton">Somar</button>
+
+        <br />
+
+        <h2>Valores positivos somados</h2>
+
+        <p class="ordainedArray"></p>
+    </div>
+
+    <script>
+        const array = [10, -100, 20, -33, 44, 16, 1, 200, -3];
+
+        const disorderedArray = document.querySelector(".disorderedArray");
+
+        const ordainedArray = document.querySelector(".ordainedArray");
+
+        const btn = document.querySelector(".arrayButton");
+
+        btn.onclick = plusPositivesNum;
+
+        disorderedArray.textContent = `[ ${array} ]`;
+
+        function plusPositivesNum() {
+            let plusArray = 0;
+            for (i = 0; i < array.length; i++) {
+                if (array[i] > 0) {
+                    plusArray += array[i];
+                }
+            }
+            return (ordainedArray.textContent = `[ ${plusArray} ]`);
+        }
+    </script>
+
+    <footer>
+        <p class="copyright">&copy; Copyright Rafael Lima - 2023</p>
+    </footer>
+</body>
+
+</html>

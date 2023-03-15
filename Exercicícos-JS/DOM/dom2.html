@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM/Event 2</title>
+    <link rel="stylesheet" href="../css/execs.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="../img/logo.png" class="logo"></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="https://github.com/RafaFX">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="box">
+
+        <ul id="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+            <li>Item 6</li>
+        </ul>
+
+    </div>
+
+    <script>
+
+        const ul = document.getElementById('list');
+        
+        const liFromUl = ul.querySelectorAll('li');
+
+        for(i = 0; i < liFromUl.length ; i++){
+            console.log(liFromUl[i].textContent);
+        };
+
+    </script>
+
+    <footer>
+        <p class="copyright">&copy; Copyright Rafael Lima - 2023</p>
+    </footer>
+
+
+
+
+</body>
+
+</html>

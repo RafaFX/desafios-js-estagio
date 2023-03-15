@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async/Promise 3</title>
+    <link rel="stylesheet" href="../css/execs-async.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="../img/logo.png" class="logo"></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="https://github.com/RafaFX">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="box">
+
+
+        <pre class="pre-code">
+            <code>
+                async function fetchMultipleData() {
+                    const responsePromise1 =
+                        fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json')
+                        .then((data)=>
+                            data.json()
+                        );;
+                    const responsePromise2 =
+                        fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+                        .then((data)=>
+                            data.json()
+                        );
+                    return Promise.all([responsePromise1,responsePromise2])
+                }
+                console.log(fetchMultipleData()
+                .then((data)=>
+                console.log(data)
+                ));
+            </code>
+        </pre>
+
+    </div>
+
+    <script>
+
+        //3. Refatore o seguinte código para que o mesmo execute as duas requests ao
+        //mesmo tempo e retorne o resultado das requests.
+
+        async function fetchMultipleData() {
+            const responsePromise1 = 
+                fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json')
+                .then((data)=> 
+                    data.json()
+                );;
+            const responsePromise2 = 
+                fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+                .then((data)=> 
+                    data.json()
+                );
+            return Promise.all([responsePromise1,responsePromise2])
+        }
+        console.log(fetchMultipleData()
+        .then((data)=>
+        console.log(data)
+        ));
+
+
+    </script>
+
+    <footer>
+        <p class="copyright">&copy; Copyright Rafael Lima - 2023</p>
+    </footer>
+
+
+
+
+</body>
+
+</html>

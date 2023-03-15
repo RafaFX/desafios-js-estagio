@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exec 4</title>
+    <link rel="stylesheet" href="../css/execs.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="../img/logo.png" class="logo"></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="https://github.com/RafaFX">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="box">
+
+        <h1>Digite um número para verificar se ele é divisível por 10</h1>
+
+        <br>
+        <br>
+
+        <input type="number" class="numberField">
+
+        <button>Verificar</button>
+
+        <br>
+        <br>
+
+        <h2 class="result"></h2>
+
+
+    </div>
+
+    <script>
+
+        const btn = document.querySelector('button');
+
+        const numberField = document.querySelector('.numberField');
+
+        const result = document.querySelector('.result');
+
+        function getNumber() {
+            checkNumber(numberField.value);
+        }
+
+        function checkNumber(num) {
+            if (num % 10 === 0) {
+                result.style.backgroundColor = 'green';
+                return result.textContent = `${num} é divisível por 10`;
+
+            } else {
+                result.style.backgroundColor = 'red';
+                return result.textContent = `${num} não é divisível por 10`;
+            }
+            numberField.value = '';
+        }
+
+        btn.onclick = getNumber;
+
+    </script>
+
+    <footer>
+        <p class="copyright">&copy; Copyright Rafael Lima - 2023</p>
+    </footer>
+
+
+
+
+</body>
+
+</html>

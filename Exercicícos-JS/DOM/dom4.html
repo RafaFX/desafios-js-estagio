@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM/Event 4</title>
+    <link rel="stylesheet" href="../css/execs.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="../img/logo.png" class="logo"></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="https://github.com/RafaFX">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="box">
+
+        <input type="text" id="firstName" placeholder="Steve" value="Steve" />
+        <input type="text" id="lastName" placeholder="Jobs" value="Jobs" />
+        <input type="text" id="fullName" placeholder="full name" readonly />
+        <button type="button" id="button">Combine Names</button>
+
+
+    </div>
+
+    <script>
+
+        const textField1 = document.getElementById('firstName');
+
+        const textField2 = document.getElementById('lastName');
+
+        const resultField = document.getElementById('fullName');
+
+        const btn = document.getElementById('button');
+
+        function joinNames(){
+            return resultField.value = `${textField1.value} ${textField2.value}`;
+        };
+
+        btn.onclick = joinNames;
+
+
+
+    </script>
+
+    <footer>
+        <p class="copyright">&copy; Copyright Rafael Lima - 2023</p>
+    </footer>
+
+
+
+
+</body>
+
+</html>

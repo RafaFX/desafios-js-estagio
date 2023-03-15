@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exec 5</title>
+    <link rel="stylesheet" href="../css/execs.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="../img/logo.png" class="logo"></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="https://github.com/RafaFX">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="box">
+
+        <h1>Digite 2 números para verificar se eles são iguais</h1>
+
+        <br>
+        <br>
+
+        <input type="number" class="numberField">
+
+        <input type="number" class="numberField2">
+
+
+
+        <button>Verificar</button>
+
+        <br>
+        <br>
+
+        <h2 class="result"></h2>
+
+
+
+
+    </div>
+
+    <script>
+
+        const btn = document.querySelector('button');
+
+        const numberField = document.querySelector('.numberField');
+
+        const numberField2 = document.querySelector('.numberField2');
+
+        const result = document.querySelector('.result')
+
+
+        function getNumber() {
+            verifyEquals(numberField.value, numberField2.value);
+        }
+
+        function verifyEquals(num1, num2) {
+            if (num1 === num2) {
+                const resultNumbers = result.textContent = `Os números ${num1} e ${num2} são iguais`;
+                result.style.backgroundColor = 'green';
+                numberField.value = '';
+                numberField2.value = '';
+                return resultNumbers;
+
+            } else {
+                const resultNumbers = result.textContent = `Os números ${num1} e ${num2} não são iguais`;
+                result.style.backgroundColor = 'red';
+                numberField.value = '';
+                numberField2.value = '';
+                return resultNumbers;
+            }
+        }
+
+        btn.onclick = getNumber;
+
+    </script>
+
+    <footer>
+        <p class="copyright">&copy; Copyright Rafael Lima - 2023</p>
+    </footer>
+
+
+
+
+</body>
+
+</html>
